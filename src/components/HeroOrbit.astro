@@ -1,0 +1,64 @@
+---
+import { ArrowRight, BookOpenText, Boxes, Compass, Mail, MessageCircle, Wrench } from "lucide-astro";
+import type { SiteCategoryMeta } from "@/data/sites";
+
+interface Props {
+  categories: SiteCategoryMeta[];
+}
+
+const { categories } = Astro.props;
+
+const iconMap = {
+  blog: BookOpenText,
+  nav: Compass,
+  works: Boxes,
+  tools: Wrench
+};
+---
+
+<section class="hero section-shell" id="home" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">你好，这里是我的数字花园</p>
+    <h1 id="hero-title">构建有用的东西<br />记录技术与思考</h1>
+    <p class="hero-description">
+      专注 Web 技术、开发工具和效率提升。在这里写文章、收藏资源、发布作品、沉淀工具。
+    </p>
+
+    <div class="hero-links" aria-label="联系方式">
+      <a href="mailto:hello@example.com">
+        <Mail size={16} aria-hidden="true" />
+        hello@example.com
+      </a>
+      <span class="divider" aria-hidden="true"></span>
+      <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      <span class="divider" aria-hidden="true"></span>
+      <a href="#about">
+        <MessageCircle size={16} aria-hidden="true" />
+        关于我
+      </a>
+    </div>
+  </div>
+
+  <div class="orbit-wrap" aria-label="总站栏目入口">
+    <div class="orbit-ring orbit-ring-outer" aria-hidden="true"></div>
+    <div class="orbit-ring orbit-ring-inner" aria-hidden="true"></div>
+    <div class="orbit-cross orbit-cross-x" aria-hidden="true"></div>
+    <div class="orbit-cross orbit-cross-y" aria-hidden="true"></div>
+    <div class="orbit-center">
+      <span class="brand-mark orbit-mark" aria-hidden="true">X</span>
+      <span class="sr-only">总站入口</span>
+    </div>
+
+    {categories.map((category) => {
+      const Icon = iconMap[category.id];
+      return (
+        <a class={`orbit-node orbit-node-${category.id} accent-${category.accent}`} id={category.id} href={`#dir-${category.id}`}>
+          <span class="node-icon"><Icon size={24} aria-hidden="true" /></span>
+          <span class="node-title">{category.title}</span>
+          <span class="node-description">{category.description}</span>
+          <ArrowRight class="node-arrow" size={17} aria-hidden="true" />
+        </a>
+      );
+    })}
+  </div>
+</section>

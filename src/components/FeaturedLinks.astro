@@ -1,0 +1,47 @@
+---
+import { ArrowRight, Circle } from "lucide-astro";
+import type { SiteEntry } from "@/data/sites";
+import { statusLabels } from "@/data/sites";
+
+interface Props {
+  sites: SiteEntry[];
+}
+
+const { sites } = Astro.props;
+---
+
+<section class="featured section-shell" id="featured" aria-labelledby="featured-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">精选入口</p>
+      <h2 id="featured-title">从这里继续浏览</h2>
+    </div>
+    <a class="text-link" href="#directory">
+      查看全部
+      <ArrowRight size={16} aria-hidden="true" />
+    </a>
+  </div>
+
+  <div class="featured-grid">
+    {sites.map((site) => (
+      <a class="featured-row" href={site.href} target="_blank" rel="noreferrer">
+        <span class={`site-logo site-logo-${site.category}`} aria-hidden="true">
+          {site.title.slice(0, 1)}
+        </span>
+        <span class="site-main">
+          <span class="site-title-line">
+            <strong>{site.title}</strong>
+            {site.tags.slice(0, 1).map((tag) => <span class="tag">{tag}</span>)}
+          </span>
+          <span class="site-description">{site.description}</span>
+          <span class="site-url">{site.displayUrl}</span>
+        </span>
+        <span class={`site-status status-${site.status}`}>
+          <Circle size={8} fill="currentColor" aria-hidden="true" />
+          {statusLabels[site.status]}
+        </span>
+        <ArrowRight class="row-arrow" size={18} aria-hidden="true" />
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import type { SiteCategoryMeta, SiteEntry } from "@/data/sites";
+import { statusLabels } from "@/data/sites";
+
+interface Props {
+  categories: SiteCategoryMeta[];
+  sites: SiteEntry[];
+}
+
+const { categories, sites } = Astro.props;
+---
+
+<section class="directory section-shell" id="directory" aria-labelledby="directory-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">全部入口</p>
+      <h2 id="directory-title">按用途找到对应站点</h2>
+    </div>
+    <p class="section-note">后续新增网站时，把它放进对应分类即可。</p>
+  </div>
+
+  <div class="directory-grid">
+    {categories.map((category) => {
+      const groupedSites = sites.filter((site) => site.category === category.id);
+      return (
+        <article class="directory-group" id={`dir-${category.id}`}>
+          <div class="directory-group-head">
+            <span class="node-icon">{category.label.slice(0, 1)}</span>
+            <div>
+              <h3>{category.label}</h3>
+              <p>{category.description}</p>
+            </div>
+          </div>
+          {groupedSites.length ? (
+            groupedSites.map((site) => (
+              <a class="directory-link" href={site.href} target="_blank" rel="noreferrer">
+                <span>
+                  <strong>{site.title}</strong>
+                  <small>{site.displayUrl}</small>
+                </span>
+                <span class={`status-${site.status}`}>{statusLabels[site.status]}</span>
+              </a>
+            ))
+          ) : (
+            <p class="directory-empty">正在整理中</p>
+          )}
+        </article>
+      );
+    })}
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import Header from "@/components/Header.astro";
+import HeroOrbit from "@/components/HeroOrbit.astro";
+import FeaturedLinks from "@/components/FeaturedLinks.astro";
+import DirectoryLinks from "@/components/DirectoryLinks.astro";
+import AboutSection from "@/components/AboutSection.astro";
+import SiteFooter from "@/components/SiteFooter.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { categories, featuredSites, sites } from "@/data/sites";
+---
+
+<BaseLayout title="小站总站 | 个人品牌门面与导航门户">
+  <Header />
+  <main>
+    <HeroOrbit categories={categories} />
+    <FeaturedLinks sites={featuredSites} />
+    <DirectoryLinks categories={categories} sites={sites} />
+    <AboutSection />
+  </main>
+  <SiteFooter />
+
+  <script>
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      root.dataset.theme = "dark";
+    }
+
+    document.querySelector("[data-theme-toggle]")?.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = nextTheme;
+      localStorage.setItem("theme", nextTheme);
+    });
+
+    const mobileNav = document.querySelector("[data-mobile-nav]");
+    const menuToggle = document.querySelector("[data-menu-toggle]");
+    const menuPanel = document.querySelector("[data-menu-panel]");
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mobileNav?.getAttribute("data-open") === "true";
+      mobileNav?.setAttribute("data-open", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "打开导航" : "关闭导航");
+    });
+
+    menuPanel?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileNav?.setAttribute("data-open", "false"));
+    });
+  </script>
+</BaseLayout>
