@@ -1,0 +1,16 @@
+{
+  "name": "小站总站",
+  "short_name": "总站",
+  "description": "个人品牌门面与导航门户。",
+  "start_url": "../index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}
