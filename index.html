@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一个清爽的个人品牌门面与导航门户。" />
+    <meta property="og:title" content="小站总站" />
+    <meta property="og:description" content="个人品牌门面与导航门户，连接博客、导航、作品和工具。" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+    <link rel="manifest" href="public/site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/global.css" />
+    <title>小站总站 | 个人品牌门面与导航门户</title>
+  </head>
+  <body>
+    <header class="site-header" data-mobile-nav>
+      <a class="brand" href="#home" aria-label="回到首页">
+        <span class="brand-mark" aria-hidden="true">X</span>
+        <span>小站总站</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#home">首页</a>
+        <a href="#featured">精选</a>
+        <a href="#directory">全部</a>
+        <a href="#about">关于</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切换主题">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">◐</span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+        </button>
+        <a class="icon-button" href="#featured" aria-label="查看精选入口">⌕</a>
+        <a class="icon-button" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="打开 GitHub">G</a>
+        <button class="icon-button mobile-menu-button" type="button" data-menu-toggle aria-label="打开导航">
+          <span class="menu-open-icon" aria-hidden="true">☰</span>
+          <span class="menu-close-icon" aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" aria-label="移动端导航" data-menu-panel>
+        <a href="#home">首页</a>
+        <a href="#featured">精选</a>
+        <a href="#directory">全部</a>
+        <a href="#about">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">你好，这里是我的数字花园</p>
+          <h1 id="hero-title">构建有用的东西<br />记录技术与思考</h1>
+          <p class="hero-description">
+            专注 Web 技术、开发工具和效率提升。在这里写文章、收藏资源、发布作品、沉淀工具。
+          </p>
+
+          <div class="hero-links" aria-label="联系方式">
+            <a href="mailto:hello@example.com">✉ hello@example.com</a>
+            <span class="divider" aria-hidden="true"></span>
+            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <span class="divider" aria-hidden="true"></span>
+            <a href="#about">关于我</a>
+          </div>
+        </div>
+
+        <div class="orbit-wrap" aria-label="总站栏目入口">
+          <div class="orbit-ring orbit-ring-outer" aria-hidden="true"></div>
+          <div class="orbit-ring orbit-ring-inner" aria-hidden="true"></div>
+          <div class="orbit-cross orbit-cross-x" aria-hidden="true"></div>
+          <div class="orbit-cross orbit-cross-y" aria-hidden="true"></div>
+          <div class="orbit-center">
+            <span class="brand-mark orbit-mark" aria-hidden="true">X</span>
+            <span class="sr-only">总站入口</span>
+          </div>
+
+          <a class="orbit-node orbit-node-blog accent-blue" id="blog" href="#dir-blog">
+            <span class="node-icon">B</span>
+            <span class="node-title">博客</span>
+            <span class="node-description">技术文章与思考记录</span>
+            <span class="node-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="orbit-node orbit-node-nav accent-green" id="nav" href="#dir-nav">
+            <span class="node-icon">N</span>
+            <span class="node-title">导航</span>
+            <span class="node-description">精选资源与网站导航</span>
+            <span class="node-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="orbit-node orbit-node-works accent-orange" id="works" href="#dir-works">
+            <span class="node-icon">W</span>
+            <span class="node-title">作品</span>
+            <span class="node-description">个人项目与开源实践</span>
+            <span class="node-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="orbit-node orbit-node-tools accent-ink" id="tools" href="#dir-tools">
+            <span class="node-icon">T</span>
+            <span class="node-title">工具</span>
+            <span class="node-description">效率工具与在线服务</span>
+            <span class="node-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="featured section-shell" id="featured" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">精选入口</p>
+            <h2 id="featured-title">从这里继续浏览</h2>
+          </div>
+          <a class="text-link" href="#directory">查看全部 <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="featured-grid">
+          <a class="featured-row" href="https://blog.example.com" target="_blank" rel="noreferrer">
+            <span class="site-logo site-logo-blog" aria-hidden="true">技</span>
+            <span class="site-main">
+              <span class="site-title-line"><strong>技术博客</strong><span class="tag">博客</span></span>
+              <span class="site-description">记录 Web 技术、工程实践与长期思考。</span>
+              <span class="site-url">blog.example.com</span>
+            </span>
+            <span class="site-status status-online">● 在线</span>
+            <span class="row-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="featured-row" href="https://nav.example.com" target="_blank" rel="noreferrer">
+            <span class="site-logo site-logo-nav" aria-hidden="true">导</span>
+            <span class="site-main">
+              <span class="site-title-line"><strong>开发者导航</strong><span class="tag">导航</span></span>
+              <span class="site-description">整理常用开发资源、文档与实用网站。</span>
+              <span class="site-url">nav.example.com</span>
+            </span>
+            <span class="site-status status-online">● 在线</span>
+            <span class="row-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="featured-row" href="https://work.example.com" target="_blank" rel="noreferrer">
+            <span class="site-logo site-logo-works" aria-hidden="true">作</span>
+            <span class="site-main">
+              <span class="site-title-line"><strong>作品集</strong><span class="tag">作品</span></span>
+              <span class="site-description">收纳个人项目、实验作品与开源实践。</span>
+              <span class="site-url">work.example.com</span>
+            </span>
+            <span class="site-status status-online">● 在线</span>
+            <span class="row-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="featured-row" href="https://tools.example.com" target="_blank" rel="noreferrer">
+            <span class="site-logo site-logo-tools" aria-hidden="true">工</span>
+            <span class="site-main">
+              <span class="site-title-line"><strong>工具箱</strong><span class="tag">工具</span></span>
+              <span class="site-description">一些可直接使用的小工具与效率服务。</span>
+              <span class="site-url">tools.example.com</span>
+            </span>
+            <span class="site-status status-building">● 建设中</span>
+            <span class="row-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="directory section-shell" id="directory" aria-labelledby="directory-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">全部入口</p>
+            <h2 id="directory-title">按用途找到对应站点</h2>
+          </div>
+          <p class="section-note">后续新增网站时，把它放进对应分类即可。</p>
+        </div>
+
+        <div class="directory-grid">
+          <article class="directory-group" id="dir-blog">
+            <div class="directory-group-head">
+              <span class="node-icon">B</span>
+              <div>
+                <h3>博客</h3>
+                <p>文章、记录、技术沉淀。</p>
+              </div>
+            </div>
+            <a class="directory-link" href="https://blog.example.com" target="_blank" rel="noreferrer">
+              <span><strong>技术博客</strong><small>blog.example.com</small></span>
+              <span class="status-online">在线</span>
+            </a>
+          </article>
+
+          <article class="directory-group" id="dir-nav">
+            <div class="directory-group-head">
+              <span class="node-icon">N</span>
+              <div>
+                <h3>导航</h3>
+                <p>资源、收藏、常用入口。</p>
+              </div>
+            </div>
+            <a class="directory-link" href="https://nav.example.com" target="_blank" rel="noreferrer">
+              <span><strong>开发者导航</strong><small>nav.example.com</small></span>
+              <span class="status-online">在线</span>
+            </a>
+            <a class="directory-link" href="https://links.example.com" target="_blank" rel="noreferrer">
+              <span><strong>资源收藏夹</strong><small>links.example.com</small></span>
+              <span class="status-building">建设中</span>
+            </a>
+          </article>
+
+          <article class="directory-group" id="dir-works">
+            <div class="directory-group-head">
+              <span class="node-icon">W</span>
+              <div>
+                <h3>作品</h3>
+                <p>项目、实验、开源实践。</p>
+              </div>
+            </div>
+            <a class="directory-link" href="https://work.example.com" target="_blank" rel="noreferrer">
+              <span><strong>作品集</strong><small>work.example.com</small></span>
+              <span class="status-online">在线</span>
+            </a>
+          </article>
+
+          <article class="directory-group" id="dir-tools">
+            <div class="directory-group-head">
+              <span class="node-icon">T</span>
+              <div>
+                <h3>工具</h3>
+                <p>在线服务、效率工具、小应用。</p>
+              </div>
+            </div>
+            <a class="directory-link" href="https://tools.example.com" target="_blank" rel="noreferrer">
+              <span><strong>工具箱</strong><small>tools.example.com</small></span>
+              <span class="status-building">建设中</span>
+            </a>
+            <a class="directory-link" href="https://snippets.example.com" target="_blank" rel="noreferrer">
+              <span><strong>代码片段库</strong><small>snippets.example.com</small></span>
+              <span class="status-planned">计划中</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="section-shell about-inner">
+          <div class="about-copy">
+            <p class="section-kicker">关于本站</p>
+            <h2 id="about-title">这里是一个收纳学习、构建与分享的入口。</h2>
+            <p>
+              它会逐步连接我的博客、导航、作品与工具。第一版先保持轻量，重点是让人快速理解我在做什么，并顺手进入想看的内容。
+            </p>
+            <a class="text-link" href="#featured">了解更多 <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="about-points">
+            <article class="about-point">
+              <span aria-hidden="true">▦</span>
+              <div><h3>持续记录</h3><p>写作驱动思考，沉淀可复用的知识。</p></div>
+            </article>
+            <article class="about-point">
+              <span aria-hidden="true">⌘</span>
+              <div><h3>开源分享</h3><p>把工具和项目整理成可以被使用的东西。</p></div>
+            </article>
+            <article class="about-point">
+              <span aria-hidden="true">◇</span>
+              <div><h3>精益求精</h3><p>关注细节、体验与长期维护。</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-inner">
+        <p>小站总站 · Personal Hub</p>
+        <div class="footer-links">
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:hello@example.com">Email</a>
+          <span>© 2026</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        root.dataset.theme = "dark";
+      }
+
+      document.querySelector("[data-theme-toggle]")?.addEventListener("click", () => {
+        const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+        root.dataset.theme = nextTheme;
+        localStorage.setItem("theme", nextTheme);
+      });
+
+      const mobileNav = document.querySelector("[data-mobile-nav]");
+      const menuToggle = document.querySelector("[data-menu-toggle]");
+      const menuPanel = document.querySelector("[data-menu-panel]");
+
+      menuToggle?.addEventListener("click", () => {
+        const isOpen = mobileNav?.getAttribute("data-open") === "true";
+        mobileNav?.setAttribute("data-open", String(!isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "打开导航" : "关闭导航");
+      });
+
+      menuPanel?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => mobileNav?.setAttribute("data-open", "false"));
+      });
+    </script>
+  </body>
+</html>
