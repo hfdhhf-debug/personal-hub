@@ -2,34 +2,27 @@
 
 这是个人总站 V1：一个“个人品牌门面 + 导航门户”的主页。
 
-当前有两套形态：
+当前仓库已放入可直接打开的静态第一版：
 
-- `index.html`：无依赖静态预览版，可直接双击打开。
-- `src/`：Astro 项目结构，等 npm registry 网络可用后可安装依赖并正式构建。
+- `index.html`：主页结构、内容和交互。
+- `src/styles/global.css`：完整视觉样式、响应式布局和深色模式。
+- `public/favicon.svg`、`public/site.webmanifest`：基础站点图标和应用清单。
 
 ## 预览
 
-直接打开：
+本地直接打开：
 
 ```text
 D:\xiaowork.dev\index.html
 ```
 
-## 修改入口内容
-
-Astro 版的数据在：
+仓库地址：
 
 ```text
-src/data/sites.ts
+https://github.com/hfdhhf-debug/personal-hub
 ```
 
-静态预览版的数据暂时写在：
-
-```text
-index.html
-```
-
-后续 npm 依赖安装成功后，建议以 `src/data/sites.ts` 为唯一数据源，移除静态页里的重复内容。
+## 页面内容
 
 静态页目前包含三层入口：
 
@@ -45,21 +38,9 @@ index.html
 - 右侧用轨道式布局展示博客、导航、作品、工具四个入口。
 - 下方用精选入口承接继续浏览。
 
-参考图：
-
-```text
-docs/design-references/personal-hub-v1-selected-style.png
-```
-
 ## 后续待办
 
 - 替换真实姓名、邮箱、GitHub 和站点链接。
-- npm registry 网络恢复后运行 `npm install`。
-- 运行 `npm run build` 检查 Astro 构建。
+- 补齐 Astro 源码结构并接入统一数据源。
+- npm registry 网络恢复后运行构建检查。
 - 用浏览器做桌面和移动端视觉 QA。
-
-静态部署说明见：
-
-```text
-docs/deploy/static-site.md
-```
